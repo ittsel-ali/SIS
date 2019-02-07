@@ -32,6 +32,8 @@ CREATE TABLE dbo.Registration (
 	TermID int NOT NULL
 );
 
+ALTER TABLE dbo.Registration ADD CONSTRAINT PK__Registra__1A16F74F281A3F27 PRIMARY KEY (StudentID, CourseID, TermID);
+
 -- Add 0 rows for Registration.
 CREATE TABLE dbo.Student (
 	StudentID int NOT NULL,
@@ -61,5 +63,7 @@ CREATE TABLE dbo.TeachingAssignment (
 	InstructorID int NOT NULL,
 	TermID int NOT NULL
 );
+
+ALTER TABLE dbo.TeachingAssignment ADD CONSTRAINT PK__Teaching__24BC6B1E82A67F48 PRIMARY KEY (CourseID, InstructorID, TermID);
 
 -- Add 0 rows for TeachingAssignment.
