@@ -1,0 +1,67 @@
+@model IEnumerable<SIS.Models.StudyTerm>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TermName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TermStartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TermEndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TermYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TermSeason)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TermName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TermStartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TermEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TermYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TermSeason)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TermId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TermId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TermId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>
